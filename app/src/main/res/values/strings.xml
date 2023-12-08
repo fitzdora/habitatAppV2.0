@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">HabitatAppV2.0</string>
-    <string name="button_addSpecies">Add Species</string>
+    <string name="appTitle">Welcome</string>
+    <string name="appSubtitle">Please document your Habitat</string>
+    <string name="button_addTitle">Add Species</string>
     <string name="text_title">Common Name</string>
     <string name="text_titleHint">Enter Common Name</string>
+    <string name="hint_speciesDescription">Enter Description</string>
+    <string name="hint_habitatType">Enter Habitat Type</string>
+    <string name="addNoOfSpeciesSeen">Add No. of Species Seen</string>
+    <string name="soilType">Choose A Soil Type</string>
+    <string name="clay">Clay</string>
+    <string name="silt">Silt</string>
+    <string name="sand">Sand</string>
+    <string name="stones">Stones</string>
+    <string name="chalky">Chalky</string>
 </resources>
