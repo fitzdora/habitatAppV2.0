@@ -11,7 +11,7 @@
         <!-- status bar color -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- custom themes -->
-        <item name="android:background">?attr/color_BackgroundDark</item>
+        <item name="android:button>?attr/colorPrimaryVarient</item>
 
     </style>
 
