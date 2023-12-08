@@ -1,8 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.HabitatAppV20" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary Brand Color -->
+        <item name="colorPrimary">@color/color_Primary</item>
+        <item name="colorPrimaryVariant">@color/color_Secondary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary Brand Color -->
+        <item name="colorSecondary">@color/color_Secondary</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- status bar color -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- custom themes -->
+        <item name="android:background">?attr/color_BackgroundDark</item>
+
     </style>
 
     <style name="Theme.HabitatAppV20" parent="Base.Theme.HabitatAppV20" />
