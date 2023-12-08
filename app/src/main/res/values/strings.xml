@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">HabitatAppV2.0</string>
+    <string name="button_addSpecies">Add Species</string>
+    <string name="text_title">Common Name</string>
+    <string name="text_titleHint">Enter Common Name</string>
 </resources>
