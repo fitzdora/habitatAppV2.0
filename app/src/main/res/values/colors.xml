@@ -4,15 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_Primary">#FFFFFFFF</color>
     <color name="color_Secondary">#80A030</color>
-    <color name="color_BackgroundDark">#FFBA8A</color>
+    <color name="color_Tertiary">#FF7f27</color>
         <!--    adding in Habitat App theme colors-->
-    <color name="colorPrimary">#FFFFFFFF</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FFCA18</color>
-    <color name="colorBackground">#FDDCC5</color>
+    <color name="color_PrimaryDark">#000000</color>
+    <color name="color_Accent">#FFCA18</color>
+    <color name="color_Background">#FDDCC5</color>
     <color name="color_BackgroundDark">#FFBA8A</color>
-    <color name="colorSecondary">#80A030</color>
-    <color name="colorTertiary">#FF7f27</color>
-    <color name="colorTertiaryDark">#c87736</color>
-    <color name="colorSecondaryDark">#5D7523</color>
+    <color name="color_TertiaryDark">#c87736</color>
+    <color name="color_SecondaryDark">#5D7523</color>
 </resources>

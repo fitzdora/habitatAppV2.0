@@ -76,7 +76,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="4dp"
-        android:layout_toStartOf="@+id/noOfSpeciesSeen"
+        android:layout_toStartOf="@+id/addNoOfSpeciesSeen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"
@@ -121,7 +121,7 @@
     </RadioGroup>
 
     <NumberPicker
-        android:id="@+id/noOfSpeciesSeen"
+        android:id="@+id/addNoOfSpeciesSeen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/appSubtitle"
@@ -167,7 +167,7 @@
         android:inputType="text"
         android:maxLength="40"
         android:maxLines="1"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/color_PrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
@@ -187,7 +187,7 @@
         android:inputType="text"
         android:maxLength="40"
         android:maxLines="1"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/color_PrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
@@ -207,7 +207,7 @@
         android:inputType="text"
         android:maxLength="40"
         android:maxLines="1"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/color_PrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
@@ -241,5 +241,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.355" />
+
+    <TextView
+        android:id="@+id/amountOfSpeciesSeen"
+        android:layout_width="148dp"
+        android:layout_height="41dp"
+        android:layout_alignEnd="@+id/appSubtitle"
+        android:text="@string/amountOfSpeciesSeen"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.887" />
+
+    <TextView
+        android:id="@+id/TotalAmountOfSpeciesSeen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/appSubtitle"
+        android:text="@string/total"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.865" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

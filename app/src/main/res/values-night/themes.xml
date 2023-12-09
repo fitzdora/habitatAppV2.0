@@ -8,8 +8,12 @@
         <!-- Secondary Brand Color -->
         <item name="colorSecondary">@color/color_Secondary</item>
         <item name="colorOnSecondary">@color/white</item>
+        <!-- Tertiary Brand Color -->
+        <item name="colorOnTertiary">@color/color_Tertiary</item>
         <!-- status bar color -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- custom themes -->
+        <item name="android:button">?attr/colorPrimaryVariant</item>
+        <item name="android:background">@color/color_Background</item>
     </style>
 </resources>
