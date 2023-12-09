@@ -1,20 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.HabitatAppV20" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.HabitatAppV20" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary Brand Color -->
         <item name="colorPrimary">@color/color_Primary</item>
         <item name="colorPrimaryVariant">@color/color_Secondary</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary Brand Color -->
         <item name="colorSecondary">@color/color_Secondary</item>
+        <item name="colorSecondaryVariant">@color/color_SecondaryDark</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Tertiary Brand Color -->
-        <item name="colorOnTertiary">@color/color_Tertiary</item>
+        <item name="colorTertiary">@color/color_Tertiary</item>
+        <item name="colorOnTertiary">@color/white</item>
         <!-- status bar color -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorSecondaryVariant</item>
         <!-- custom themes -->
-        <item name="android:button">?attr/colorPrimaryVariant</item>
+        <item name="android:button">?attr/colorTertiary</item>
         <item name="android:background">@color/color_Background</item>
+        <item name="android:windowActionBar">?attr/colorPrimaryVariant</item>
+
 
     </style>
 
