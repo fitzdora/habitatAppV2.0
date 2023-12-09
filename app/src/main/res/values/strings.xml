@@ -15,4 +15,6 @@
     <string name="sand">Sand</string>
     <string name="stones">Stones</string>
     <string name="chalky">Chalky</string>
+    <string name="action_addSpecies">Add Species</string>
+    <string name="action_showSpeciesList">Show Species List</string>
 </resources>

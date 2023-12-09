@@ -1,8 +1,11 @@
 package ie.setu.habitatappv20.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.databinding.ActivityAddspeciesBinding
@@ -14,6 +17,11 @@ class AddSpecies : AppCompatActivity() {
 
     private lateinit var addSpeciesLayout : ActivityAddspeciesBinding
     lateinit var app: HabitatApp
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+       menuInflater.inflate(R.menu.menu_addspecies, menu)
+        return true
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addSpeciesLayout = ActivityAddspeciesBinding.inflate(layoutInflater)
@@ -72,4 +80,14 @@ class AddSpecies : AppCompatActivity() {
         i("Total No. Of Species Seen: $totalSpecies ")
     }
 
-}
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //set up different menu choices
+        return when (item.itemId){
+            R.id.action_showSpeciesList -> {
+                startActivity(Intent(this, SpeciesList::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+            }
+        }
+    }
