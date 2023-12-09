@@ -35,7 +35,7 @@ class AddSpecies : AppCompatActivity() {
                 Toast.makeText(applicationContext, "No of Species Amount Exceeded!", Toast.LENGTH_LONG).show()
             else {
                 totalSpecies += amount
-                addSpeciesLayout.TotalAmountOfSpeciesSeen.text = getString(R.string.total, totalSpecies)
+                addSpeciesLayout.TotalAmountOfSpeciesSeen.text = getString(totalSpecies)
                 addSpeciesLayout.progressBar.progress = totalSpecies
             }
         }
