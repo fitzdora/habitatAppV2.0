@@ -8,8 +8,7 @@
     <string name="hint_speciesDescription">Enter Description</string>
     <string name="hint_habitatType">Enter Habitat Type</string>
     <string name="addNoOfSpeciesSeen">Add No. of Species Seen</string>
-    <string name="amountOfSpeciesSeen">Total Species Seen</string>
-    <string name="total">Total</string>
+    <string name="amountOfSpeciesSeen"> Total amount of Species Seen: : %d</string>
     <string name="soilType">Choose A Soil Type</string>
     <string name="clay">Clay</string>
     <string name="silt">Silt</string>
