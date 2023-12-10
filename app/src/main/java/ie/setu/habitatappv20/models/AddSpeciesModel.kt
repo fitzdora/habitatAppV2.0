@@ -9,5 +9,5 @@ data class AddSpeciesModel(var id: Long = 0,
                            val habitatType: String,
                            val speciesDescription: String,
                            val soilType: String = "N/A",
-                           val total: Int = 0): Parcelable
+                           val totalSpecies: Int = 0): Parcelable
 

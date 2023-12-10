@@ -5,17 +5,31 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
 import ie.setu.habitatappv20.R
+import ie.setu.habitatappv20.adapters.AddSpeciesAdapter
+import ie.setu.habitatappv20.databinding.ActivityAddspeciesBinding
+import ie.setu.habitatappv20.main.HabitatApp
 
 class SpeciesList : AppCompatActivity() {
 
+    lateinit var app: HabitatApp
+    lateinit var speciesListLayout : ActivityAddspeciesBinding
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_specieslist, menu)
+        menuInflater.inflate(R.menu.menu_specieslist, menu) //may need to double check menu here
         return true
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_species_list)
+        // setContentView(R.layout.activity_species_list)
+
+        speciesListLayout = ActivityAddspeciesBinding.inflate(layoutInflater)
+        setContentView(speciesListLayout.root)
+
+        app = this.application as HabitatApp
+        speciesListLayout.recyclerView.layoutManager = LinearLayoutManager(this)
+        speciesListLayout.recyclerView.adapter = AddSpeciesAdapter(app.addSpeciesStore.findAll())
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

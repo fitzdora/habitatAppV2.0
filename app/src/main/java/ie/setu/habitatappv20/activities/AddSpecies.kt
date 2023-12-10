@@ -10,6 +10,7 @@ import android.widget.Toast
 import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.databinding.ActivityAddspeciesBinding
 import ie.setu.habitatappv20.main.HabitatApp
+import ie.setu.habitatappv20.models.AddSpeciesModel
 import timber.log.Timber
 import timber.log.Timber.Forest.i
 
@@ -49,14 +50,14 @@ class AddSpecies : AppCompatActivity() {
         var totalSpecies = 0
 
 
-        addSpeciesLayout.buttonAddTitle.setOnClickListener {
+        addSpeciesLayout.buttonAddSpecies.setOnClickListener {
 
-            commonName = addSpeciesLayout.textTitle.text.toString()
-            speciesDescription = addSpeciesLayout.speciesDescription.text.toString()
-            habitatType = addSpeciesLayout.habitatType.text.toString()
+            val commonName = addSpeciesLayout.titleText.text.toString()
+            val speciesDescription = addSpeciesLayout.speciesDescription.text.toString()
+            val habitatType = addSpeciesLayout.habitatType.text.toString()
 
-            val amount = addSpeciesLayout.addNoOfSpeciesSeen.value
-            Timber.i("Amount selected: $amount")
+            val totalSpecies = addSpeciesLayout.addNoOfSpeciesSeen.value
+            Timber.i("Amount selected: $totalSpecies")
             if(totalSpecies >= addSpeciesLayout.progressBar.max)
                 Toast.makeText(applicationContext, "No of Species Amount Exceeded!", Toast.LENGTH_LONG).show()
             else {
@@ -69,10 +70,12 @@ class AddSpecies : AppCompatActivity() {
                     else -> "N/A" // Default or handle accordingly
                 }
 
-                totalSpecies += amount
-                Timber.i("Formatted String: ${getString(R.string.amountOfSpeciesSeen, totalSpecies)}")
+
                 addSpeciesLayout.amountOfSpeciesSeen.text = getString(R.string.amountOfSpeciesSeen, totalSpecies)
+                Timber.i("Formatted String: ${getString(R.string.amountOfSpeciesSeen, totalSpecies)}")
                 addSpeciesLayout.progressBar.progress = totalSpecies
+
+                app.addSpeciesStore.create(AddSpeciesModel(commonName= commonName, habitatType = habitatType, speciesDescription = speciesDescription, soilType = soilType, totalSpecies = totalSpecies))
             }
         }
 

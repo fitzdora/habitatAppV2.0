@@ -13,11 +13,12 @@
         <item name="colorTertiary">@color/color_Tertiary</item>
         <item name="colorOnTertiary">@color/white</item>
         <!-- status bar color -->
-        <item name="android:statusBarColor">?attr/colorSecondaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- custom themes -->
-        <item name="android:button">?attr/colorTertiary</item>
+        <item name="android:button">@color/color_Secondary</item>
         <item name="android:background">@color/color_Background</item>
-        <item name="android:windowActionBar">?attr/colorPrimaryVariant</item>
+        <item name="android:windowActionBar">@color/color_Tertiary</item>
+
 
     </style>
 </resources>

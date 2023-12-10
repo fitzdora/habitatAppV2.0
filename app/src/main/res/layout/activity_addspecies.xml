@@ -48,7 +48,7 @@
 
 
     <Button
-        android:id="@+id/button_addTitle"
+        android:id="@+id/button_addSpecies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -57,7 +57,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/button_addTitle"
+        android:text="@string/button_addSpecies"
+        android:backgroundTint="@color/color_Secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.816"
@@ -141,7 +142,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="349dp"
         android:layout_height="14dp"
-        android:layout_above="@+id/button_addTitle"
+        android:layout_above="@+id/button_addSpecies"
         android:layout_alignEnd="@+id/appSubtitle"
         android:layout_alignParentStart="true"
         android:layout_marginStart="8dp"
@@ -156,14 +157,14 @@
         app:layout_constraintVertical_bias="0.804" />
 
     <EditText
-        android:id="@+id/text_title"
+        android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/soilType"
         android:layout_below="@+id/appSubtitle"
         android:autofillHints="hint"
         android:ems="10"
-        android:hint="@string/text_titleHint"
+        android:hint="@string/titleTextHint"
         android:inputType="text"
         android:maxLength="40"
         android:maxLines="1"
@@ -180,7 +181,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/soilType"
-        android:layout_below="@+id/text_title"
+        android:layout_below="@+id/titleText"
         android:autofillHints="hint"
         android:ems="10"
         android:hint="@string/hint_speciesDescription"
