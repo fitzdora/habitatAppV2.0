@@ -8,7 +8,7 @@
     tools:context=".activities.SpeciesList">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@id/recyclerView"
         android:layout_width="397dp"
         android:layout_height="584dp"
         android:layout_marginTop="116dp"

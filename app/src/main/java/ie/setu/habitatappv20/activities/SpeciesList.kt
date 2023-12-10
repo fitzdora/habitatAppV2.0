@@ -10,6 +10,7 @@ import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.adapters.AddSpeciesAdapter
 import ie.setu.habitatappv20.databinding.ActivityAddspeciesBinding
 import ie.setu.habitatappv20.main.HabitatApp
+import androidx.recyclerview.widget.RecyclerView
 
 class SpeciesList : AppCompatActivity() {
 
@@ -28,8 +29,13 @@ class SpeciesList : AppCompatActivity() {
         setContentView(speciesListLayout.root)
 
         app = this.application as HabitatApp
-        speciesListLayout.recyclerView.layoutManager = LinearLayoutManager(this)
-        speciesListLayout.recyclerView.adapter = AddSpeciesAdapter(app.addSpeciesStore.findAll())
+
+            val recyclerView = androidx.recyclerview.widget.RecyclerView
+
+            val speciesList = app.addSpeciesStore.findAll()?: emptyList()
+            speciesListLayout.recyclerView.layoutManager = LinearLayoutManager(this)
+            speciesListLayout.recyclerView.adapter = AddSpeciesAdapter(speciesList)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

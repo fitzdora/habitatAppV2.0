@@ -7,7 +7,7 @@ import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.databinding.CardAddspeciesBinding
 import ie.setu.habitatappv20.models.AddSpeciesModel
 
-class AddSpeciesAdapter constructor(private var addSpecies: List<AddSpeciesModel>)
+class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesModel>)
     : RecyclerView.Adapter<AddSpeciesAdapter.MainHolder>() {
 
     override fun onCreateViewHolder( parent: ViewGroup, viewType: Int):MainHolder {
@@ -17,14 +17,14 @@ class AddSpeciesAdapter constructor(private var addSpecies: List<AddSpeciesModel
     }
 
     override fun onBindViewHolder(holder: MainHolder, position: Int) {
-        val speciesList = addSpecies[holder.adapterPosition]
-        holder.bind(speciesList)
+        val addSpecies = speciesList[holder.adapterPosition]
+        holder.bind(addSpecies)
     }
 
 
-    override fun getItemCount(): Int = addSpecies.size
+    override fun getItemCount(): Int = speciesList.size
 
-    inner class MainHolder(val binding: CardAddspeciesBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class MainHolder(val binding: CardAddspeciesBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(speciesList: AddSpeciesModel) {
             binding.amountOfSpeciesSeen.text = speciesList.totalSpecies.toString()
