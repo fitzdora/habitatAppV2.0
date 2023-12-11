@@ -42,6 +42,7 @@ class AddSpecies : AppCompatActivity() {
 
         //DataBinding for EditView
         var commonName = "text_title"
+        var scientificName = "scientificName"
         var speciesDescription = "speciesDescription"
         var habitatType = "habitatType"
 
@@ -75,7 +76,7 @@ class AddSpecies : AppCompatActivity() {
                 Timber.i("Formatted String: ${getString(R.string.amountOfSpeciesSeen, totalSpecies)}")
                 addSpeciesLayout.progressBar.progress = totalSpecies
 
-                app.addSpeciesStore.create(AddSpeciesModel(commonName= commonName, habitatType = habitatType, speciesDescription = speciesDescription, soilType = soilType, totalSpecies = totalSpecies))
+                app.addSpeciesStore.create(AddSpeciesModel(commonName= commonName, scientificName = scientificName, habitatType = habitatType, speciesDescription = speciesDescription, soilType = soilType, totalSpecies = totalSpecies))
             }
         }
 

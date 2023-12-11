@@ -11,11 +11,13 @@ import ie.setu.habitatappv20.adapters.AddSpeciesAdapter
 import ie.setu.habitatappv20.databinding.ActivityAddspeciesBinding
 import ie.setu.habitatappv20.main.HabitatApp
 import androidx.recyclerview.widget.RecyclerView
+import ie.setu.habitatappv20.databinding.ActivitySpecieslistBinding
 
 class SpeciesList : AppCompatActivity() {
 
     lateinit var app: HabitatApp
-    lateinit var speciesListLayout : ActivityAddspeciesBinding
+    lateinit var speciesListLayout : ActivitySpecieslistBinding
+    // lateinit var speciesListLayout : ActivityAddspeciesBinding
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_specieslist, menu) //may need to double check menu here
@@ -25,16 +27,12 @@ class SpeciesList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         // setContentView(R.layout.activity_species_list)
 
-        speciesListLayout = ActivityAddspeciesBinding.inflate(layoutInflater)
+        speciesListLayout = ActivitySpecieslistBinding.inflate(layoutInflater)
         setContentView(speciesListLayout.root)
 
         app = this.application as HabitatApp
-
-            val recyclerView = androidx.recyclerview.widget.RecyclerView
-
-            val speciesList = app.addSpeciesStore.findAll()?: emptyList()
-            speciesListLayout.recyclerView.layoutManager = LinearLayoutManager(this)
-            speciesListLayout.recyclerView.adapter = AddSpeciesAdapter(speciesList)
+        speciesListLayout.recyclerView.layoutManager = LinearLayoutManager(this)
+        speciesListLayout.recyclerView.adapter = AddSpeciesAdapter(app.addSpeciesStore.findAll())
 
     }
 

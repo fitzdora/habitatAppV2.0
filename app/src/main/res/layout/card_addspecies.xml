@@ -8,42 +8,82 @@
     android:layout_marginBottom="8dp"
     android:elevation="24dp">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="144dp"
         android:padding="16dp">
 
         <ImageView
             android:id="@+id/imageIcon"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
             app:srcCompat="@mipmap/ic_launcher_round"
-            android:contentDescription="@string/app_name" />
+            android:contentDescription="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
-            android:id="@+id/amountOfSpeciesSeen"
-            android:layout_width="121dp"
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_toEndOf="@+id/imageIcon"
-            android:textSize="24sp"
-            tools:text="@string/amountOfSpeciesSeen" />
+            android:layout_marginTop="4dp"
+            android:textAlignment="viewStart"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintStart_toEndOf="@+id/imageIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A Title" />
+
+        <TextView
+            android:id="@+id/habitatType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintStart_toEndOf="@+id/imageIcon"
+            app:layout_constraintTop_toTopOf="@+id/titleText"
+            tools:text="Habitat Type" />
+
+        <TextView
+            android:id="@+id/speciesDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toEndOf="@+id/imageIcon"
+            app:layout_constraintTop_toTopOf="@+id/habitatType"
+            tools:text="A Description" />
 
         <TextView
             android:id="@+id/soilType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_toEndOf="@+id/amountOfSpeciesSeen"
-            android:text="@string/soilType"
-            android:textSize="24sp" />
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="281dp"
+            tools:layout_editor_absoluteY="-1dp" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/amountOfSpeciesSeen"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/titleText"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="220dp"
+            tools:layout_editor_absoluteY="-2dp"
+            tools:text="@string/amountOfSpeciesSeen" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

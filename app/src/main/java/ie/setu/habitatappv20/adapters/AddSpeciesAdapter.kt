@@ -27,6 +27,9 @@ class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesMode
     inner class MainHolder(val binding: CardAddspeciesBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(speciesList: AddSpeciesModel) {
+            binding.titleText.text = speciesList.commonName
+            binding.habitatType.text = speciesList.habitatType
+            binding.speciesDescription.text = speciesList.speciesDescription
             binding.amountOfSpeciesSeen.text = speciesList.totalSpecies.toString()
             binding.soilType.text = speciesList.soilType
             binding.imageIcon.setImageResource(R.mipmap.ic_launcher_round)

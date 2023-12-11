@@ -6,6 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class AddSpeciesModel(var id: Long = 0,
                            val commonName: String,
+                           val scientificName: String,
                            val habitatType: String,
                            val speciesDescription: String,
                            val soilType: String = "N/A",
