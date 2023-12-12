@@ -18,4 +18,6 @@
     <string name="chalky">Chalky</string>
     <string name="action_addSpecies">Add Species</string>
     <string name="action_showSpeciesList">Show Species List</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
