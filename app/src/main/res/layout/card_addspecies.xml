@@ -67,22 +67,27 @@
 
         <TextView
             android:id="@+id/soilType"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="61dp"
+            android:layout_height="64dp"
             android:layout_alignParentTop="true"
+            android:layout_marginEnd="4dp"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="281dp"
-            tools:layout_editor_absoluteY="-1dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
 
         <TextView
             android:id="@+id/amountOfSpeciesSeen"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/titleText"
             android:textSize="16sp"
-            tools:layout_editor_absoluteX="220dp"
-            tools:layout_editor_absoluteY="-2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/soilType"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.106"
             tools:text="@string/amountOfSpeciesSeen" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
