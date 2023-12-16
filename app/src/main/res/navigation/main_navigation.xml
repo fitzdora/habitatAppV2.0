@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/addSpeciesFragment"
-        android:name="ie.setu.habitatappv20.AddSpeciesFragment"
+        android:name="ie.setu.habitatappv20.models.AddSpeciesFragment"
         android:label="fragment_addspecies"
         tools:layout="@layout/fragment_addspecies" />
     <fragment
         android:id="@+id/speciesListFragment"
-        android:name="ie.setu.habitatappv20.SpeciesListFragment"
+        android:name="ie.setu.habitatappv20.models.SpeciesListFragment"
         android:label="fragment_specieslist"
         tools:layout="@layout/fragment_specieslist" />
 </navigation>
