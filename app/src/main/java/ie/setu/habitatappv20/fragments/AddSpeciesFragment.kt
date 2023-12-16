@@ -79,7 +79,7 @@ class AddSpeciesFragment : Fragment() {
             val scientificName = fragBinding.scientificName.text.toString()
 
             val totalSpecies = fragBinding.addNoOfSpeciesSeen.value
-                    Timber.i("Amount selected: $totalSpecies")
+            Timber.i("Amount selected: $totalSpecies")
             if(totalSpecies >= fragBinding.progressBar.max)
                 Toast.makeText(requireContext(), "No of Species Amount Exceeded!", Toast.LENGTH_LONG).show()
             else {
