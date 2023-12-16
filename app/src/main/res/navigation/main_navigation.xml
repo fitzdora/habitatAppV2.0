@@ -7,12 +7,24 @@
 
     <fragment
         android:id="@+id/addSpeciesFragment"
-        android:name="ie.setu.habitatappv20.models.AddSpeciesFragment"
+        android:name="ie.setu.habitatappv20.fragments.AddSpeciesFragment"
         android:label="fragment_addspecies"
-        tools:layout="@layout/fragment_addspecies" />
+        tools:layout="@layout/fragment_addspecies" >
+        <action
+            android:id="@+id/action_addSpeciesFragment_to_speciesListFragment"
+            app:destination="@id/speciesListFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/speciesListFragment"
-        android:name="ie.setu.habitatappv20.models.SpeciesListFragment"
+        android:name="ie.setu.habitatappv20.fragments.SpeciesListFragment"
         android:label="fragment_specieslist"
-        tools:layout="@layout/fragment_specieslist" />
+        tools:layout="@layout/fragment_specieslist" >
+        <action
+            android:id="@+id/action_speciesListFragment_to_addSpeciesFragment4"
+            app:destination="@id/addSpeciesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
 </navigation>
