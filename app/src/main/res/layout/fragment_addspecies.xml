@@ -236,7 +236,6 @@
             app:layout_constraintVertical_bias="0.33" />
 
         <TextView
-            android:id="@+id/chooseSoilType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/soilType"
@@ -250,7 +249,6 @@
             app:layout_constraintVertical_bias="0.415" />
 
         <TextView
-            android:id="@+id/noOfSpeciesSeen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/appSubtitle"

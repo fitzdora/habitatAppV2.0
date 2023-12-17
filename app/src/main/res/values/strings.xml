@@ -3,13 +3,12 @@
     <string name="appTitle">Welcome</string>
     <string name="appSubtitle">Please document your Habitat</string>
     <string name="button_addSpecies">Add Species</string>
-    <string name="titleText">Common Name</string>
     <string name="hint_titleText">Enter Common Name</string>
     <string name="hint_scientificName">Enter Scientific Name - if known</string>
     <string name="hint_speciesDescription">Enter Description</string>
     <string name="hint_habitatType">Enter Habitat Type</string>
-    <string name="addNoOfSpeciesSeen">Add No. of Species Seen</string>
-    <string name="amountOfSpeciesSeen"> Total amount of Species Seen: : %d</string>
+    <string name="addNoOfSpeciesSeen">No. of Species Seen</string>
+    <string name="amountOfSpeciesSeen">No. of Species Seen: : %d</string>
     <string name="soilType">Choose A Soil Type</string>
     <string name="clay">Clay</string>
     <string name="silt">Silt</string>

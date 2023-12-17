@@ -97,7 +97,7 @@ class AddSpeciesFragment : Fragment() {
                 Timber.i("Formatted String: ${getString(R.string.amountOfSpeciesSeen, totalSpecies)}")
                 fragBinding.progressBar.progress = totalSpecies
 
-                app.addSpeciesStore.create(AddSpeciesModel(commonName= commonName, scientificName = scientificName, habitatType = habitatType, speciesDescription = speciesDescription, soilType = soilType, totalSpecies = totalSpecies))
+                app.addSpeciesStore.create(AddSpeciesModel(commonName= commonName, scientificName = scientificName, speciesDescription = speciesDescription, habitatType = habitatType, soilType = soilType, totalSpecies = totalSpecies))
             }
         }
     }

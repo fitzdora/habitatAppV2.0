@@ -9,7 +9,6 @@
     android:elevation="24dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="144dp"
         android:padding="16dp">
@@ -87,8 +86,7 @@
             app:layout_constraintEnd_toStartOf="@+id/soilType"
             app:layout_constraintHorizontal_bias="0.75"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.106"
-            tools:text="@string/amountOfSpeciesSeen" />
+            app:layout_constraintVertical_bias="0.106" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

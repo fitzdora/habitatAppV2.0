@@ -2,13 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_navigation"
     app:startDestination="@id/addSpeciesFragment">
 
     <fragment
         android:id="@+id/addSpeciesFragment"
         android:name="ie.setu.habitatappv20.fragments.AddSpeciesFragment"
-        android:label="fragment_addspecies"
+        android:label="Add Species"
         tools:layout="@layout/fragment_addspecies" >
         <action
             android:id="@+id/action_addSpeciesFragment_to_speciesListFragment"
@@ -19,7 +18,7 @@
     <fragment
         android:id="@+id/speciesListFragment"
         android:name="ie.setu.habitatappv20.fragments.SpeciesListFragment"
-        android:label="fragment_specieslist"
+        android:label="Species List"
         tools:layout="@layout/fragment_specieslist" >
         <action
             android:id="@+id/action_speciesListFragment_to_addSpeciesFragment4"
