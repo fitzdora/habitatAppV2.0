@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/addSpeciesFragment">
+    app:startDestination="@id/speciesListFragment">
 
     <fragment
         android:id="@+id/addSpeciesFragment"
-        android:name="ie.setu.habitatappv20.fragments.AddSpeciesFragment"
+        android:name="ie.setu.habitatappv20.ui.addspecies.AddSpeciesFragment"
         android:label="Add Species"
         tools:layout="@layout/fragment_addspecies" >
         <action
@@ -17,11 +17,11 @@
     </fragment>
     <fragment
         android:id="@+id/speciesListFragment"
-        android:name="ie.setu.habitatappv20.fragments.SpeciesListFragment"
+        android:name="ie.setu.habitatappv20.ui.listspecies.SpeciesListFragment"
         android:label="Species List"
         tools:layout="@layout/fragment_specieslist" >
         <action
-            android:id="@+id/action_speciesListFragment_to_addSpeciesFragment4"
+            android:id="@+id/action_speciesListFragment_to_addSpeciesFragment"
             app:destination="@id/addSpeciesFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="ie.setu.habitatappv20.fragments.AboutFragment"
+        android:name="ie.setu.habitatappv20.ui.about.AboutFragment"
         android:label="About Habitat App"
         tools:layout="@layout/fragment_about" >
         <action

@@ -7,7 +7,7 @@ var lastId = 0L
 internal  fun getId(): Long {
     return lastId++
 }
-class AddSpeciesMemStore : AddSpeciesStore {
+object AddSpeciesManager : AddSpeciesStore {
     val speciesList = ArrayList<AddSpeciesModel>()
 
     override fun findAll(): List<AddSpeciesModel> {

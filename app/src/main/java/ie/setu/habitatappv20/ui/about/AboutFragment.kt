@@ -1,4 +1,4 @@
-package ie.setu.habitatappv20.fragments
+package ie.setu.habitatappv20.ui.about
 
 import android.os.Bundle
 import android.view.LayoutInflater
