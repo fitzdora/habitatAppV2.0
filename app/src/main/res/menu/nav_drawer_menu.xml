@@ -12,11 +12,17 @@
             android:id="@+id/speciesListFragment"
             android:icon="@drawable/ic_menu_showspecieslist"
             android:title="@string/action_showSpeciesList" />
+        <item
+            android:id="@+id/speciesDetails"
+            android:icon="@drawable/ic_menu_details"
+            android:title="@string/speciesDetails" />
 
         <item
             android:id="@+id/aboutFragment"
             android:icon="@drawable/ic_menu_about"
             android:title="@string/action_about" />
+
+
     </group>
 
     <item android:title="@string/group_communicate">

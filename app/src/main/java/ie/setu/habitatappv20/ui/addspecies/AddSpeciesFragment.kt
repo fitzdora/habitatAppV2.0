@@ -14,14 +14,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.databinding.FragmentAddspeciesBinding
-import ie.setu.habitatappv20.main.HabitatApp
-import ie.setu.habitatappv20.models.AddSpeciesModel
+import ie.setu.habitatappv20.ui.listspecies.SpeciesListViewModel
 import timber.log.Timber
 class AddSpeciesFragment : Fragment() {
 
@@ -29,6 +27,7 @@ class AddSpeciesFragment : Fragment() {
     private var _fragBinding: FragmentAddspeciesBinding? = null
     private val fragBinding get() = _fragBinding!!
     private lateinit var addSpeciesViewModel: AddSpeciesViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //app = activity?.application as HabitatApp
@@ -49,7 +48,7 @@ class AddSpeciesFragment : Fragment() {
         //MVVM model refactor
         setupMenu()
 
-        addSpeciesViewModel = ViewModelProvider(this).get(addSpeciesViewModel::class.java)
+        addSpeciesViewModel = ViewModelProvider(this).get(AddSpeciesViewModel::class.java)
         addSpeciesViewModel.observableStatus.observe(viewLifecycleOwner, Observer { status ->
             status?.let { render(status) }
         })
@@ -89,7 +88,7 @@ class AddSpeciesFragment : Fragment() {
         when (status) {
             true -> {
                 view?.let {
-                    //findNavController().popBackStack()
+                    findNavController().popBackStack()
                 }
             }
 
@@ -160,7 +159,14 @@ class AddSpeciesFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        val speciesListViewModel = ViewModelProvider(this).get(SpeciesListViewModel::class.java)
+        speciesListViewModel.observableSpeciesList.observe(viewLifecycleOwner, Observer{
+            val totalSpecies = speciesListViewModel.observableSpeciesList.value!!
+            totalSpecies.also { fragBinding.progressBar.progress }
+
+            })
+        }
 
     }
-}
+
 

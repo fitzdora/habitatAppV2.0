@@ -9,7 +9,7 @@ import java.lang.IllegalArgumentException
 
 class AddSpeciesViewModel : ViewModel() {
 
-    private val status = MutableLiveData<Boolean>()
+    private val status = MutableLiveData<Boolean>().apply { value = false }
 
     val observableStatus: LiveData<Boolean>
         get() = status

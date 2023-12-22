@@ -5,17 +5,6 @@
     app:startDestination="@id/speciesListFragment">
 
     <fragment
-        android:id="@+id/addSpeciesFragment"
-        android:name="ie.setu.habitatappv20.ui.addspecies.AddSpeciesFragment"
-        android:label="Add Species"
-        tools:layout="@layout/fragment_addspecies" >
-        <action
-            android:id="@+id/action_addSpeciesFragment_to_speciesListFragment"
-            app:destination="@id/speciesListFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" />
-    </fragment>
-    <fragment
         android:id="@+id/speciesListFragment"
         android:name="ie.setu.habitatappv20.ui.listspecies.SpeciesListFragment"
         android:label="Species List"
@@ -28,6 +17,20 @@
         <action
             android:id="@+id/action_speciesListFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_speciesListFragment_to_speciesDetails"
+            app:destination="@id/speciesDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSpeciesFragment"
+        android:name="ie.setu.habitatappv20.ui.addspecies.AddSpeciesFragment"
+        android:label="Add Species"
+        tools:layout="@layout/fragment_addspecies" >
+        <action
+            android:id="@+id/action_addSpeciesFragment_to_speciesListFragment"
+            app:destination="@id/speciesListFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -37,6 +40,17 @@
         <action
             android:id="@+id/action_aboutFragment_to_addSpeciesFragment"
             app:destination="@id/addSpeciesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/speciesDetails"
+        android:name="ie.setu.habitatappv20.ui.detail.SpeciesDetailsFragment"
+        android:label="fragment_species_details"
+        tools:layout="@layout/fragment_speciesdetails" >
+        <action
+            android:id="@+id/action_speciesDetails_to_speciesListFragment"
+            app:destination="@id/speciesListFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>

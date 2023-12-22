@@ -7,7 +7,12 @@ import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.databinding.CardAddspeciesBinding
 import ie.setu.habitatappv20.models.AddSpeciesModel
 
-class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesModel>)
+interface AddSpeciesClickListener {
+    fun onAddSpeciesClick(speciesList: AddSpeciesModel)
+}
+
+class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesModel>,
+                                    private val listener: AddSpeciesClickListener)
     : RecyclerView.Adapter<AddSpeciesAdapter.MainHolder>() {
 
     override fun onCreateViewHolder( parent: ViewGroup, viewType: Int):MainHolder {
@@ -18,7 +23,7 @@ class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesMode
 
     override fun onBindViewHolder(holder: MainHolder, position: Int) {
         val addSpecies = speciesList[holder.adapterPosition]
-        holder.bind(addSpecies)
+        holder.bind(addSpecies, listener)
     }
 
 
@@ -26,13 +31,16 @@ class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesMode
 
     inner class MainHolder(val binding: CardAddspeciesBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(speciesList: AddSpeciesModel) {
+        fun bind(speciesList: AddSpeciesModel, listener: AddSpeciesClickListener) {
             binding.titleText.text = speciesList.commonName
             binding.habitatType.text = speciesList.habitatType
             binding.speciesDescription.text = speciesList.speciesDescription
             binding.amountOfSpeciesSeen.text = speciesList.totalSpecies.toString()
             binding.soilType.text = speciesList.soilType
             binding.imageIcon.setImageResource(R.mipmap.ic_launcher_round)
+            binding.addSpecies = speciesList
+            binding.root.setOnClickListener { listener.onAddSpeciesClick(speciesList)}
+            binding.executePendingBindings()
 
         }
     }

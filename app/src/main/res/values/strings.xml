@@ -28,4 +28,8 @@
     <string name="about_message">Please start documenting your habitat today!</string>
     <string name="speciesListNotFound">No species added...\nPlease add your Species!</string>
     <string name="addSpeciesError">Error: Unable to add a specie</string>
+    <string name="speciesDetails">Species Details</string>
+    <string name="commonName">Common Name: </string>
+    <string name="scientificName">Scientific Name: </string>
+    <string name="speciesDescription">Species Description: </string>
 </resources>

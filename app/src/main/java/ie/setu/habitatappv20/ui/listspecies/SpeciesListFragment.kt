@@ -21,11 +21,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.adapters.AddSpeciesAdapter
+import ie.setu.habitatappv20.adapters.AddSpeciesClickListener
 import ie.setu.habitatappv20.databinding.FragmentSpecieslistBinding
 import ie.setu.habitatappv20.main.HabitatApp
 import ie.setu.habitatappv20.models.AddSpeciesModel
 
-class SpeciesListFragment : Fragment() {
+class SpeciesListFragment : Fragment(), AddSpeciesClickListener {
 
     private lateinit var app: HabitatApp
     private var _fragBinding: FragmentSpecieslistBinding? = null
@@ -84,7 +85,7 @@ class SpeciesListFragment : Fragment() {
     }
 
    private fun render(speciesList : List<AddSpeciesModel>){
-       fragBinding.recyclerView.adapter = AddSpeciesAdapter(speciesList)
+       fragBinding.recyclerView.adapter = AddSpeciesAdapter(speciesList, this)
        if(speciesList.isEmpty()) {
            fragBinding.recyclerView.visibility = View.GONE
            fragBinding.speciesListNotFound.visibility = View.VISIBLE
@@ -93,6 +94,11 @@ class SpeciesListFragment : Fragment() {
            fragBinding.speciesListNotFound.visibility = View.GONE
        }
    }
+
+    override fun onAddSpeciesClick(speciesList: AddSpeciesModel) {
+        val action = SpeciesListFragmentDirections.actionSpeciesListFragmentToSpeciesDetails()
+        findNavController().navigate(action)
+    }
 
     override fun onResume() {
         super.onResume()
