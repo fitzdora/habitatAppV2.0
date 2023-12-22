@@ -96,11 +96,11 @@ class SpeciesListFragment : Fragment(), AddSpeciesClickListener {
    }
 
     override fun onAddSpeciesClick(speciesList: AddSpeciesModel) {
-        val action = SpeciesListFragmentDirections.actionSpeciesListFragmentToSpeciesDetails()
+        val action = SpeciesListFragmentDirections.actionSpeciesListFragmentToSpeciesDetails(speciesList.id)
         findNavController().navigate(action)
     }
 
-    override fun onResume() {
+    override fun onResume () {
         super.onResume()
         SpeciesListViewModel.load()
     }

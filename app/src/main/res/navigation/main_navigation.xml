@@ -8,6 +8,7 @@
         android:id="@+id/speciesListFragment"
         android:name="ie.setu.habitatappv20.ui.listspecies.SpeciesListFragment"
         android:label="Species List"
+        android:backgroundTint="@color/color_Secondary"
         tools:layout="@layout/fragment_specieslist" >
         <action
             android:id="@+id/action_speciesListFragment_to_addSpeciesFragment"
@@ -25,6 +26,7 @@
         android:id="@+id/addSpeciesFragment"
         android:name="ie.setu.habitatappv20.ui.addspecies.AddSpeciesFragment"
         android:label="Add Species"
+        android:backgroundTint="@color/color_Secondary"
         tools:layout="@layout/fragment_addspecies" >
         <action
             android:id="@+id/action_addSpeciesFragment_to_speciesListFragment"
@@ -36,6 +38,7 @@
         android:id="@+id/aboutFragment"
         android:name="ie.setu.habitatappv20.ui.about.AboutFragment"
         android:label="About Habitat App"
+        android:backgroundTint="@color/color_Secondary"
         tools:layout="@layout/fragment_about" >
         <action
             android:id="@+id/action_aboutFragment_to_addSpeciesFragment"
@@ -46,12 +49,16 @@
     <fragment
         android:id="@+id/speciesDetails"
         android:name="ie.setu.habitatappv20.ui.detail.SpeciesDetailsFragment"
-        android:label="fragment_species_details"
+        android:label="Change Species Details"
+        android:backgroundTint="@color/color_Secondary"
         tools:layout="@layout/fragment_speciesdetails" >
         <action
             android:id="@+id/action_speciesDetails_to_speciesListFragment"
             app:destination="@id/speciesListFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <argument
+            android:name="addspeciesid"
+            app:argType="long" />
     </fragment>
 </navigation>
