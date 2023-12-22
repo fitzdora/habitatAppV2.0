@@ -19,6 +19,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.databinding.FragmentAddspeciesBinding
+import ie.setu.habitatappv20.models.AddSpeciesModel
 import ie.setu.habitatappv20.ui.listspecies.SpeciesListViewModel
 import timber.log.Timber
 class AddSpeciesFragment : Fragment() {
@@ -138,7 +139,7 @@ class AddSpeciesFragment : Fragment() {
                 )
                 layout.progressBar.progress = totalSpecies
 
-                /* app.addSpeciesStore.create(
+                addSpeciesViewModel.addSpecies(
                     AddSpeciesModel(
                         commonName = commonName,
                         scientificName = scientificName,
@@ -146,7 +147,8 @@ class AddSpeciesFragment : Fragment() {
                         habitatType = habitatType,
                         soilType = soilType,
                         totalSpecies = totalSpecies
-                    ))*/
+                    )
+                )
 
             }
         }
@@ -159,12 +161,19 @@ class AddSpeciesFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val speciesListViewModel = ViewModelProvider(this).get(SpeciesListViewModel::class.java)
+        val addSpeciesViewModel = ViewModelProvider(this).get(AddSpeciesViewModel::class.java)
+        addSpeciesViewModel.observableStatus.observe(viewLifecycleOwner, Observer{
+           status -> if(status) {
+            //findNavController().navigate(R.id.action_addSpeciesFragment_to_speciesListFragment)
+        }
+        })
+
+
+    /*    val speciesListViewModel = ViewModelProvider(this).get(SpeciesListViewModel::class.java)
         speciesListViewModel.observableSpeciesList.observe(viewLifecycleOwner, Observer{
             val totalSpecies = speciesListViewModel.observableSpeciesList.value!!
-            totalSpecies.also { fragBinding.progressBar.progress }
+            totalSpecies.also { fragBinding.progressBar.progress }*/
 
-            })
         }
 
     }
