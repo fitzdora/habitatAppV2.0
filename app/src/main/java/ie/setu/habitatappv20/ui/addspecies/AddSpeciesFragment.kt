@@ -85,7 +85,7 @@ class AddSpeciesFragment : Fragment() {
         if (requireActivity().intent.hasExtra("addSpecies_edit")) {
             var edit = true
             addSpeciesViewModel = requireActivity().intent.extras?.getParcelable("addSpecies_edit")!!
-            fragBinding.speciesImage.text = if (edit) (R.string.change_species_image) else getString(R.string.select_species_image)
+            fragBinding.buttonAddImage.text = if (edit) getString(R.string.change_species_image) else getString(R.string.select_species_image)
             if(addSpeciesViewModel.speciesImage != Uri.EMPTY) {
                 Picasso.get()
                     .load(selectedImageUri)
@@ -228,7 +228,7 @@ class AddSpeciesFragment : Fragment() {
                             Picasso.get()
                                 .load(selectedImageUri)
                                 .into(fragBinding.speciesImage)
-                            fragBinding.chooseImage.setText(R.string.change_species_image)
+                            fragBinding.buttonAddImage.setText(R.string.change_species_image)
                         } // end of if
                     }
                     RESULT_CANCELED -> { } else -> { }
