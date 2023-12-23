@@ -26,6 +26,21 @@ object AddSpeciesManager : AddSpeciesStore {
         logAll()
     }
 
+    override fun update(addSpeciesModel: AddSpeciesModel) {
+        var foundSpecies: AddSpeciesModel? = speciesList.find { s -> s.id == addSpeciesModel.id}
+        if(foundSpecies != null){
+            foundSpecies.id = addSpeciesModel.id
+            foundSpecies.commonName = addSpeciesModel.commonName
+            foundSpecies.scientificName = addSpeciesModel.scientificName
+            foundSpecies.speciesDescription = addSpeciesModel.speciesDescription
+            foundSpecies.habitatType = addSpeciesModel.habitatType
+            foundSpecies.soilType = addSpeciesModel.soilType
+            foundSpecies.totalSpecies = addSpeciesModel.totalSpecies
+            foundSpecies.speciesImage = addSpeciesModel.speciesImage
+            logAll()
+        }
+    }
+
     fun logAll() {
         Timber.v("** Species List **")
         speciesList.forEach{Timber.v("Species ${it}")}

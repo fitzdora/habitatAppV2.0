@@ -38,9 +38,10 @@ class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesMode
             binding.speciesDescription.text = speciesList.speciesDescription
             binding.amountOfSpeciesSeen.text = speciesList.totalSpecies.toString()
             binding.soilType.text = speciesList.soilType
-            binding.speciesImage.setImageResource(R.mipmap.ic_launcher_round)
+            binding.imageIcon.setImageResource(R.mipmap.ic_launcher_round)
             //binding with picasso
-            Picasso.get().load(speciesList.speciesImage).into(binding.speciesImage)
+            //Picasso.get().load(speciesList.speciesImage).into(binding.speciesImage)
+            Picasso.get().load(speciesList.speciesImage).resize(200,200).into(binding.imageIcon)
             binding.addSpecies = speciesList
             binding.root.setOnClickListener { listener.onAddSpeciesClick(speciesList)}
             binding.executePendingBindings()

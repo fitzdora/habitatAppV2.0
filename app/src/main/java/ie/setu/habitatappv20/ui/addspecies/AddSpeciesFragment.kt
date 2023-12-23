@@ -11,6 +11,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -27,9 +28,7 @@ import com.squareup.picasso.Picasso
 import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.databinding.FragmentAddspeciesBinding
 import ie.setu.habitatappv20.helpers.showImagePicker
-import ie.setu.habitatappv20.models.AddSpeciesManager.speciesList
 import ie.setu.habitatappv20.models.AddSpeciesModel
-import ie.setu.habitatappv20.ui.listspecies.SpeciesListViewModel
 import timber.log.Timber
 class AddSpeciesFragment : Fragment() {
 
@@ -39,7 +38,7 @@ class AddSpeciesFragment : Fragment() {
     private val fragBinding get() = _fragBinding!!
     private lateinit var addSpeciesViewModel: AddSpeciesViewModel
     private lateinit var imageIntentLauncher : ActivityResultLauncher<Intent>
-
+    private var selectedImageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //app = activity?.application as HabitatApp
@@ -63,7 +62,6 @@ class AddSpeciesFragment : Fragment() {
         //image calling
         registerImagePickerCallback()
 
-        //this.addSpecies = AddSpeciesModel(this)
 
         addSpeciesViewModel = ViewModelProvider(this).get(AddSpeciesViewModel::class.java)
         addSpeciesViewModel.observableStatus.observe(viewLifecycleOwner, Observer { status ->
@@ -82,6 +80,17 @@ class AddSpeciesFragment : Fragment() {
 
         fragBinding.addNoOfSpeciesSeen.setOnValueChangedListener { _, _, newVal ->
             fragBinding.amountOfSpeciesSeen.text = "$newVal"
+        }
+
+        if (requireActivity().intent.hasExtra("addSpecies_edit")) {
+            var edit = true
+            addSpeciesViewModel = requireActivity().intent.extras?.getParcelable("addSpecies_edit")!!
+            fragBinding.speciesImage.text = if (edit) (R.string.change_species_image) else getString(R.string.select_species_image)
+            if(addSpeciesViewModel.speciesImage != Uri.EMPTY) {
+                Picasso.get()
+                    .load(selectedImageUri)
+                    .into(fragBinding.speciesImage)
+            }
         }
 
         setButtonListener(fragBinding)
@@ -219,6 +228,7 @@ class AddSpeciesFragment : Fragment() {
                             Picasso.get()
                                 .load(selectedImageUri)
                                 .into(fragBinding.speciesImage)
+                            fragBinding.chooseImage.setText(R.string.change_species_image)
                         } // end of if
                     }
                     RESULT_CANCELED -> { } else -> { }

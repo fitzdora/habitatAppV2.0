@@ -47,7 +47,7 @@
             app:layout_constraintVertical_bias="0.075" />
 
         <Button
-            android:id="@+id/button_addSpecies"
+            android:id="@+id/buttonAddSpecies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -141,7 +141,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="349dp"
         android:layout_height="14dp"
-        android:layout_above="@+id/button_addSpecies"
+        android:layout_above="@+id/buttonAddSpecies"
         android:layout_alignEnd="@+id/appSubtitle"
         android:layout_alignParentStart="true"
         android:layout_marginStart="8dp"
@@ -287,7 +287,7 @@
         app:layout_constraintStart_toEndOf="@+id/soilType" />
 
     <Button
-        android:id="@+id/button_addImage"
+        android:id="@+id/buttonAddImage"
         android:layout_width="135dp"
         android:layout_height="41dp"
         android:layout_alignParentBottom="true"
