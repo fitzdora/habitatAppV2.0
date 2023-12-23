@@ -21,7 +21,7 @@
         android:padding="16dp">
 
         <ImageView
-            android:id="@+id/imageIcon"
+            android:id="@+id/speciesImage"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginTop="4dp"
@@ -43,7 +43,7 @@
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.048"
-            app:layout_constraintStart_toEndOf="@+id/imageIcon"
+            app:layout_constraintStart_toEndOf="@+id/speciesImage"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="A Title" />
 
@@ -55,7 +55,7 @@
             android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.039"
-            app:layout_constraintStart_toEndOf="@+id/imageIcon"
+            app:layout_constraintStart_toEndOf="@+id/speciesImage"
             app:layout_constraintTop_toTopOf="@+id/titleText"
             tools:text="Habitat Type" />
 
@@ -67,7 +67,7 @@
             android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.044"
-            app:layout_constraintStart_toEndOf="@+id/imageIcon"
+            app:layout_constraintStart_toEndOf="@+id/speciesImage"
             app:layout_constraintTop_toTopOf="@+id/habitatType"
             tools:text="A Description" />
 

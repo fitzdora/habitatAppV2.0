@@ -3,6 +3,7 @@ package ie.setu.habitatappv20.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.databinding.CardAddspeciesBinding
 import ie.setu.habitatappv20.models.AddSpeciesModel
@@ -37,7 +38,9 @@ class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesMode
             binding.speciesDescription.text = speciesList.speciesDescription
             binding.amountOfSpeciesSeen.text = speciesList.totalSpecies.toString()
             binding.soilType.text = speciesList.soilType
-            binding.imageIcon.setImageResource(R.mipmap.ic_launcher_round)
+            binding.speciesImage.setImageResource(R.mipmap.ic_launcher_round)
+            //binding with picasso
+            Picasso.get().load(speciesList.speciesImage).into(binding.speciesImage)
             binding.addSpecies = speciesList
             binding.root.setOnClickListener { listener.onAddSpeciesClick(speciesList)}
             binding.executePendingBindings()

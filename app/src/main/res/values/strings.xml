@@ -32,4 +32,6 @@
     <string name="commonName">Common Name: </string>
     <string name="scientificName">Scientific Name: </string>
     <string name="speciesDescription">Species Description: </string>
+    <string name="button_addImage"> Add Image</string>
+    <string name="select_species_image">Select Species Image</string>
 </resources>

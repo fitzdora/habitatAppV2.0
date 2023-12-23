@@ -1,5 +1,9 @@
 package ie.setu.habitatappv20.ui.addspecies
 
+import android.app.Activity.RESULT_CANCELED
+import android.app.Activity.RESULT_OK
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -8,6 +12,8 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -17,17 +23,22 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.squareup.picasso.Picasso
 import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.databinding.FragmentAddspeciesBinding
+import ie.setu.habitatappv20.helpers.showImagePicker
+import ie.setu.habitatappv20.models.AddSpeciesManager.speciesList
 import ie.setu.habitatappv20.models.AddSpeciesModel
 import ie.setu.habitatappv20.ui.listspecies.SpeciesListViewModel
 import timber.log.Timber
 class AddSpeciesFragment : Fragment() {
 
+
     //private lateinit var app: HabitatApp
     private var _fragBinding: FragmentAddspeciesBinding? = null
     private val fragBinding get() = _fragBinding!!
     private lateinit var addSpeciesViewModel: AddSpeciesViewModel
+    private lateinit var imageIntentLauncher : ActivityResultLauncher<Intent>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,9 +60,20 @@ class AddSpeciesFragment : Fragment() {
         //MVVM model refactor
         setupMenu()
 
+        //image calling
+        registerImagePickerCallback()
+
+        //this.addSpecies = AddSpeciesModel(this)
+
         addSpeciesViewModel = ViewModelProvider(this).get(AddSpeciesViewModel::class.java)
         addSpeciesViewModel.observableStatus.observe(viewLifecycleOwner, Observer { status ->
             status?.let { render(status) }
+        })
+
+
+        addSpeciesViewModel.speciesImage.observe(viewLifecycleOwner, Observer { uri ->
+            // Update UI with the new image URI using Picasso
+            Picasso.get().load(uri).into(fragBinding.speciesImage)
         })
 
         fragBinding.progressBar.max = 10000
@@ -126,6 +148,19 @@ class AddSpeciesFragment : Fragment() {
                     else -> "N/A" // Default or handle accordingly
                 }
 
+                //Initialize model
+               addSpeciesViewModel.addSpecies(
+                    AddSpeciesModel(
+                        commonName = commonName,
+                        scientificName = scientificName,
+                        speciesDescription = speciesDescription,
+                        habitatType = habitatType,
+                        soilType = soilType,
+                        totalSpecies = totalSpecies,
+                        speciesImage = Uri.EMPTY
+                    )
+                )
+
 
                 layout.amountOfSpeciesSeen.text =
                     getString(R.string.amountOfSpeciesSeen, totalSpecies)
@@ -138,21 +173,16 @@ class AddSpeciesFragment : Fragment() {
                     }"
                 )
                 layout.progressBar.progress = totalSpecies
-
-                addSpeciesViewModel.addSpecies(
-                    AddSpeciesModel(
-                        commonName = commonName,
-                        scientificName = scientificName,
-                        speciesDescription = speciesDescription,
-                        habitatType = habitatType,
-                        soilType = soilType,
-                        totalSpecies = totalSpecies
-                    )
-                )
-
             }
+
+        }
+
+        layout.buttonAddImage.setOnClickListener {
+            Timber.i("Select image")
+            showImagePicker(imageIntentLauncher)
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -175,6 +205,26 @@ class AddSpeciesFragment : Fragment() {
             totalSpecies.also { fragBinding.progressBar.progress }*/
 
         }
+
+    private fun registerImagePickerCallback() {
+        imageIntentLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+            { result ->
+                when(result.resultCode){
+                    RESULT_OK -> {
+                        if (result.data != null) {
+                            Timber.i("Got Result ${result.data!!.data}")
+                            val selectedImageUri = result.data!!.data!!
+                            addSpeciesViewModel.setImage(selectedImageUri)
+                            Picasso.get()
+                                .load(selectedImageUri)
+                                .into(fragBinding.speciesImage)
+                        } // end of if
+                    }
+                    RESULT_CANCELED -> { } else -> { }
+                }
+            }
+    }
 
     }
 

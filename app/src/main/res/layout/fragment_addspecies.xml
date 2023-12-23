@@ -275,16 +275,32 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/speciesImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="28dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="24dp"
-        android:src="@drawable/ic_launcher_image"
+        android:src="@mipmap/ic_launcher_round"
         app:layout_constraintBottom_toBottomOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/soilType" />
+
+    <Button
+        android:id="@+id/button_addImage"
+        android:layout_width="135dp"
+        android:layout_height="41dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/color_Secondary"
+        android:text="@string/button_addImage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
