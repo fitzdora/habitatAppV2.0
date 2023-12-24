@@ -99,6 +99,18 @@
                 android:text="@{Integer.toString(addSpecies.totalSpecies)"
                 android:textSize="16sp" />
 
+            <ImageView
+                android:id="@+id/imagefavourite"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="315dp"
+                android:layout_marginTop="49dp"
+                android:layout_marginEnd="16dp"
+                app:srcCompat="@android:drawable/star_big_off" />
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </layout>
