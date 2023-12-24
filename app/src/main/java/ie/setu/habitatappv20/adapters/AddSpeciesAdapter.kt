@@ -12,8 +12,8 @@ interface AddSpeciesClickListener {
     fun onAddSpeciesClick(speciesList: AddSpeciesModel)
 }
 
-class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesModel>,
-                                    private val listener: AddSpeciesClickListener)
+class AddSpeciesAdapter(private var speciesList: List<AddSpeciesModel>,
+                        private val listener: AddSpeciesClickListener)
     : RecyclerView.Adapter<AddSpeciesAdapter.MainHolder>() {
 
     override fun onCreateViewHolder( parent: ViewGroup, viewType: Int):MainHolder {
@@ -27,6 +27,14 @@ class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesMode
         holder.bind(addSpecies, listener)
     }
 
+    private fun render(speciesList: ArrayList<AddSpeciesModel>){
+
+    }
+
+    fun removeAt(position: Int) {
+        speciesList.removeAt(position)
+        notifyItemRemoved(position)
+    }
 
     override fun getItemCount(): Int = speciesList.size
 
@@ -47,5 +55,6 @@ class AddSpeciesAdapter constructor(private var speciesList: List<AddSpeciesMode
             binding.executePendingBindings()
 
         }
+
     }
 }

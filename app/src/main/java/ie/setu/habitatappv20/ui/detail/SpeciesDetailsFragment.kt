@@ -7,30 +7,50 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import ie.setu.habitatappv20.R
+import ie.setu.habitatappv20.databinding.FragmentSpeciesdetailsBinding
+import timber.log.Timber
 
 class SpeciesDetailsFragment : Fragment() {
-    private val args by navArgs<SpeciesDetailsFragmentArgs>()
-    companion object {
-        fun newInstance() = SpeciesDetailsFragment()
-    }
 
-    private lateinit var viewModel: SpeciesDetailsViewModel
+
+    private lateinit var detailViewModel: SpeciesDetailsViewModel
+    private val args by navArgs<SpeciesDetailsFragmentArgs>()
+    private var _fragBinding: FragmentSpeciesdetailsBinding? = null
+    private val fragBinding get() = _fragBinding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-         val view = inflater.inflate(R.layout.fragment_speciesdetails, container, false)
+        _fragBinding = FragmentSpeciesdetailsBinding.inflate(inflater, container, false)
+        val root = fragBinding.root
         Toast.makeText(context, "Species ID Selected : ${args.specieslistid}", Toast.LENGTH_LONG).show()
-        return view
+
+        detailViewModel = ViewModelProvider(this).get(SpeciesDetailsViewModel::class.java)
+        detailViewModel.observableSpecies.observe(viewLifecycleOwner, Observer { render () })
+
+        return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SpeciesDetailsViewModel::class.java)
-        // TODO: Use the ViewModel
+    private fun render() {
+        fragBinding.editCommonName.setText("Edit CommonName")
+        fragBinding.editScientificName.setText("Edit ScientificName")
+        fragBinding.editSpeciesDescription.setText("Edit Description")
+        fragBinding.editNoOfSpeciesSeen.setText("0")
+        Timber.i("Edit Species Details working")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        detailViewModel.getSpecies(args.specieslistid)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _fragBinding = null
     }
 
 }

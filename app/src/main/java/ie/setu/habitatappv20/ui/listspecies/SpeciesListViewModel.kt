@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import ie.setu.habitatappv20.models.AddSpeciesManager
 import ie.setu.habitatappv20.models.AddSpeciesManager.speciesList
 import ie.setu.habitatappv20.models.AddSpeciesModel
+import timber.log.Timber
 
 class SpeciesListViewModel : ViewModel() {
     private val speciesList = MutableLiveData<List<AddSpeciesModel>>()
@@ -18,7 +19,15 @@ class SpeciesListViewModel : ViewModel() {
     }
 
     fun load() {
-        speciesList.value = AddSpeciesManager.findAll()
+        try {
+            AddSpeciesManager.findAll(speciesList)
+            Timber.i("Retrofit Success: ${speciesList.value}")
+        //speciesList.value = AddSpeciesManager.findAll()
+    }
+        catch (e: Exception) {
+            Timber.i("Retrofit Error: ${e.message}")
+
+        }
     }
 
     companion object {

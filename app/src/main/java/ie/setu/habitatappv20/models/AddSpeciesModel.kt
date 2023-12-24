@@ -5,7 +5,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class AddSpeciesModel(var id: Long = 0,
+data class AddSpeciesModel(var _id: String = "N/A",
                            var commonName: String,
                            var scientificName: String,
                            var habitatType: String,
