@@ -11,7 +11,6 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -38,12 +37,15 @@ class AddSpeciesFragment : Fragment() {
     private val fragBinding get() = _fragBinding!!
     private lateinit var addSpeciesViewModel: AddSpeciesViewModel
     private lateinit var imageIntentLauncher : ActivityResultLauncher<Intent>
-    private var selectedImageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //app = activity?.application as HabitatApp
         setHasOptionsMenu(true)
         super.onCreate(savedInstanceState)
+        //checking to see why the addSpecies_edit block is not being entered
+        if(requireActivity().intent?.hasExtra("addSpecies_edit") == true) {
+            Timber.i("Entering 'addSpecies_edit' block")
+        }
 
     }
 
@@ -57,6 +59,7 @@ class AddSpeciesFragment : Fragment() {
         _fragBinding = FragmentAddspeciesBinding.inflate(inflater, container, false)
         val root = fragBinding.root
         activity?.title = getString(R.string.action_addSpecies)
+
 
         //MVVM model refactor
         setupMenu()
@@ -234,31 +237,31 @@ class AddSpeciesFragment : Fragment() {
             }
     }
      private fun putImageOnCard(){
-
-         //checking to see why the addSpecies_edit block is not being entered
-         if(requireActivity().intent?.hasExtra("addSpecies_edit") == true) {
-             Timber.i("Entering 'addSpecies_edit' block")
-         }
          Timber.i("Before 'addSpecies_edit' block")
-         //trouble shooting why this area won't load into card_addspecies.xml
+
+         //trouble shooting why this area won't load into card_addSpecies.xml
          if (requireActivity().intent.hasExtra("addSpecies_edit")) {
              Timber.i("Entering 'addSpecies_edit' block")
-             var edit = true
+
+             val edit = true
              addSpeciesViewModel = requireActivity().intent.extras?.getParcelable("addSpecies_edit")!!
              Timber.i("Species data loaded successfully")
+
              fragBinding.buttonAddImage.text = if (edit) getString(R.string.change_species_image) else getString(R.string.select_species_image)
              Timber.i("Button text updated successfully")
              if(addSpeciesViewModel.speciesImage != Uri.EMPTY) {
                  Timber.i("speciesImage found")
+
                  Picasso.get()
                      .load(addSpeciesViewModel.speciesImage.toString())
                      .into(fragBinding.speciesImage)
                  Timber.i("UI updated successfully")
+
              } else {
                  Timber.i("SpeciesImage not found")
              }
          } else {
-             Timber.i("'addspecies_edit' not working at all ")
+             Timber.i("'addSpecies_edit' not working at all ")
          }
 
      }

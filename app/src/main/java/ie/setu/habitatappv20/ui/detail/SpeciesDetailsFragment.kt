@@ -23,7 +23,7 @@ class SpeciesDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
          val view = inflater.inflate(R.layout.fragment_speciesdetails, container, false)
-        Toast.makeText(context, "Species ID Selected : ${args.addspeciesid}", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Species ID Selected : ${args.specieslistid}", Toast.LENGTH_LONG).show()
         return view
     }
 

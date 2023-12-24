@@ -63,8 +63,9 @@ class SpeciesListFragment : Fragment(), AddSpeciesClickListener {
             findNavController().navigate(action)
         }
 
-        //requireActivity().title = getString(R.string.action_showSpeciesList)
+       // requireActivity().title = getString(R.string.action_showSpeciesList)
         //fragBinding.recyclerView.adapter = AddSpeciesAdapter(app.addSpeciesStore.findAll())
+
         return root
     }
 
@@ -96,7 +97,7 @@ class SpeciesListFragment : Fragment(), AddSpeciesClickListener {
    }
 
     override fun onAddSpeciesClick(speciesList: AddSpeciesModel) {
-        val action = SpeciesListFragmentDirections.actionSpeciesListFragmentToSpeciesDetails(speciesList.id)
+        val action = SpeciesListFragmentDirections.actionSpeciesListFragmentToSpeciesDetails(specieslistid = speciesList.id)
         findNavController().navigate(action)
 
     }
