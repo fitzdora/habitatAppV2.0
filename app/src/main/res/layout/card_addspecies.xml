@@ -2,13 +2,12 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <data>
         <variable
             name="addSpecies"
             type="ie.setu.habitatappv20.models.AddSpeciesModel" />
     </data>
-<androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -20,13 +19,13 @@
         android:layout_height="144dp"
         android:padding="16dp">
 
+
         <ImageView
             android:id="@+id/imageIcon"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
-            app:srcCompat="@mipmap/ic_launcher_round"
             android:contentDescription="@string/change_species_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

@@ -44,6 +44,10 @@ class AddSpeciesFragment : Fragment() {
         //app = activity?.application as HabitatApp
         setHasOptionsMenu(true)
         super.onCreate(savedInstanceState)
+        //checking to see why the addSpecies_edit block is not being entered
+        if(requireActivity().intent?.hasExtra("addSpecies_edit") == true) {
+            Timber.i("Entering 'addSpecies_edit' block")
+        }
     }
 
 
@@ -52,6 +56,7 @@ class AddSpeciesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        Timber.i("OnCreateView Called")
         _fragBinding = FragmentAddspeciesBinding.inflate(inflater, container, false)
         val root = fragBinding.root
         activity?.title = getString(R.string.action_addSpecies)
@@ -74,6 +79,7 @@ class AddSpeciesFragment : Fragment() {
             Picasso.get().load(uri).into(fragBinding.speciesImage)
         })
 
+
         fragBinding.progressBar.max = 10000
         fragBinding.addNoOfSpeciesSeen.minValue = 1
         fragBinding.addNoOfSpeciesSeen.maxValue = 1000
@@ -82,15 +88,26 @@ class AddSpeciesFragment : Fragment() {
             fragBinding.amountOfSpeciesSeen.text = "$newVal"
         }
 
+        Timber.i("Before 'addSpecies_edit' block")
+            //trouble shooting why this area won't load into card_addspecies.xml
         if (requireActivity().intent.hasExtra("addSpecies_edit")) {
+            Timber.i("Entering 'addSpecies_edit' block")
             var edit = true
             addSpeciesViewModel = requireActivity().intent.extras?.getParcelable("addSpecies_edit")!!
+            Timber.i("Species data loaded successfully")
             fragBinding.buttonAddImage.text = if (edit) getString(R.string.change_species_image) else getString(R.string.select_species_image)
+            Timber.i("Button text updated successfully")
             if(addSpeciesViewModel.speciesImage != Uri.EMPTY) {
+                Timber.i("speciesImage found")
                 Picasso.get()
-                    .load(selectedImageUri)
+                    .load(addSpeciesViewModel.speciesImage.toString())
                     .into(fragBinding.speciesImage)
+                Timber.i("UI updated successfully")
+            } else {
+                Timber.i("SpeciesImage not found")
             }
+        } else {
+            Timber.i("'addspecies_edit' not working at all ")
         }
 
         setButtonListener(fragBinding)
@@ -229,12 +246,16 @@ class AddSpeciesFragment : Fragment() {
                                 .load(selectedImageUri)
                                 .into(fragBinding.speciesImage)
                             fragBinding.buttonAddImage.setText(R.string.change_species_image)
+                            Timber.i("Image loaded successfully")
                         } // end of if
                     }
                     RESULT_CANCELED -> { } else -> { }
                 }
             }
     }
+     private fun putImageonCard(){
+
+     }
 
     }
 
