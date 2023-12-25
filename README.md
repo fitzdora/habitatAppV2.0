@@ -4,7 +4,7 @@
 
 #Proposal - I continued to work with my educational app - myHabitat -basically an app that helps you map flora and fauna in your immediate area…ideally the end product is that you take a photo that sets the location and maps for you using the camera location metadata and stores it so you can later identify the species.
 
-#I was not sure if we were to start again as the case study and methodology was very different from the first semester so I begun again from scratch based on my original idea. 
+#I was not sure if we were to start again as the case study and methodology was very different from the first semester so I begun again from scratch based on my original idea but using the Jetpack and MVVM method as I thought from the labs up to week 10 I could manage it. 
 
 #This I now know to have been a huge time wasting mistake and I have hit nothing but roadblocks trying to work out its development.
 
