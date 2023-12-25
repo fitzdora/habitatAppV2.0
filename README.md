@@ -14,7 +14,7 @@ I basically soldiered on knowing all the time I was digging my own pit!
 
 ###I know have a host of errors:
 
-###1. Namely I cannot load the specieslist at all so I cannot check if the specieslist is loading
+###1. Namely I cannot load the specieslist at all so I cannot check if the specieslist is loading 
 ###2. Before this I was unable to get the imageIcon on the Specieslist to load
 ###3. I had not even reached trying to update on the SpeciesDetailFragment
 ###4. Basically I now have less of an understanding on how fragments work as I have missed something fundamental along the way and it is really too late.
