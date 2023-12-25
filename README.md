@@ -20,3 +20,6 @@ I basically soldiered on knowing all the time I was digging my own pit!
 ###4. Basically I now have less of an understanding on how fragments work as I have missed something fundamental along the way and it is really too late.
 
 I would have been better off staying with assignment one and trying to work on how to get the Camera Intent working I jumped before I could leap!
+
+![HabitatApp_1](https://github.com/fitzdora/habitatAppV2.0/assets/33418972/fe8ad5bc-4ada-4767-9461-9c42b888d8ef)
+
