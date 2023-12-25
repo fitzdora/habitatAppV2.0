@@ -32,7 +32,7 @@ class AddSpeciesAdapter(private var speciesList: List<AddSpeciesModel>,
     }
 
     fun removeAt(position: Int) {
-        speciesList.removeAt(position)
+        //speciesList.removeAt(position)
         notifyItemRemoved(position)
     }
 
@@ -51,6 +51,7 @@ class AddSpeciesAdapter(private var speciesList: List<AddSpeciesModel>,
             //Picasso.get().load(speciesList.speciesImage).into(binding.speciesImage)
             Picasso.get().load(speciesList.speciesImage).resize(200,200).into(binding.imageIcon)
             binding.addSpecies = speciesList
+            binding.root.tag = speciesList._id
             binding.root.setOnClickListener { listener.onAddSpeciesClick(speciesList)}
             binding.executePendingBindings()
 

@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +32,7 @@ import ie.setu.habitatappv20.helpers.hideLoader
 import ie.setu.habitatappv20.helpers.showLoader
 import ie.setu.habitatappv20.main.HabitatApp
 import ie.setu.habitatappv20.models.AddSpeciesModel
+import ie.setu.habitatappv20.ui.detail.SpeciesDetailsFragmentArgs
 
 class SpeciesListFragment : Fragment(), AddSpeciesClickListener {
 
@@ -39,6 +41,7 @@ class SpeciesListFragment : Fragment(), AddSpeciesClickListener {
     private val fragBinding get() = _fragBinding!!
     private lateinit var speciesListViewModel: SpeciesListViewModel
     lateinit var loader: AlertDialog
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // app = activity?.application as HabitatApp

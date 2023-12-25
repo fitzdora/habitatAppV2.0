@@ -33,6 +33,8 @@
     <string name="scientificName">Scientific Name: </string>
     <string name="speciesDescription">Species Description: </string>
     <string name="button_addImage"> Add Image</string>
+    <string name="button_editSpecies">Edit</string>
+    <string name="button_deleteSpecies">Delete</string>
     <string name="select_species_image">Select Species Image</string>
     <string name="change_species_image">Change Image</string>
     <string name="messageLoading">Please wait while the Species are loading</string>

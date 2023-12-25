@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import ie.setu.habitatappv20.R
 import ie.setu.habitatappv20.databinding.FragmentSpeciesdetailsBinding
 import timber.log.Timber
 
@@ -17,7 +17,7 @@ class SpeciesDetailsFragment : Fragment() {
 
 
     private lateinit var detailViewModel: SpeciesDetailsViewModel
-    private val args by navArgs<SpeciesDetailsFragmentArgs>()
+    private val args: SpeciesDetailsFragmentArgs by navArgs()
     private var _fragBinding: FragmentSpeciesdetailsBinding? = null
     private val fragBinding get() = _fragBinding!!
 
@@ -25,12 +25,17 @@ class SpeciesDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val speciesListId = args.specieslistid
         _fragBinding = FragmentSpeciesdetailsBinding.inflate(inflater, container, false)
         val root = fragBinding.root
         Toast.makeText(context, "Species ID Selected : ${args.specieslistid}", Toast.LENGTH_LONG).show()
 
         detailViewModel = ViewModelProvider(this).get(SpeciesDetailsViewModel::class.java)
         detailViewModel.observableSpecies.observe(viewLifecycleOwner, Observer { render () })
+
+        val action = SpeciesDetailsFragmentDirections.actionSpeciesDetailsToSpeciesListFragment()
+        findNavController().navigate(action)
 
         return root
     }
