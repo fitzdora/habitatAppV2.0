@@ -21,5 +21,8 @@ I basically soldiered on knowing all the time I was digging my own pit!
 
 I would have been better off staying with assignment one and trying to work on how to get the Camera Intent working I jumped before I could leap!
 
+##UML/CLASS DIAGRAMS
+
 ![HabitatApp_1](https://github.com/fitzdora/habitatAppV2.0/assets/33418972/fe8ad5bc-4ada-4767-9461-9c42b888d8ef)
 
+![HabitatApp_2jpg](https://github.com/fitzdora/habitatAppV2.0/assets/33418972/2bad8cb9-5124-4a29-aad4-5f6f9ddb1981)
