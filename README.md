@@ -14,9 +14,21 @@ I basically soldiered on knowing all the time I was digging my own pit!
 
 ###I know have a host of errors:
 
-###1. Namely I cannot load the specieslist at all so I cannot check if the specieslist is loading
+###1. Namely I cannot load the specieslist at all so I cannot check if the specieslist is loading 
 ###2. Before this I was unable to get the imageIcon on the Specieslist to load
 ###3. I had not even reached trying to update on the SpeciesDetailFragment
 ###4. Basically I now have less of an understanding on how fragments work as I have missed something fundamental along the way and it is really too late.
 
 I would have been better off staying with assignment one and trying to work on how to get the Camera Intent working I jumped before I could leap!
+
+##UML/CLASS DIAGRAMS
+
+![HabitatApp_1](https://github.com/fitzdora/habitatAppV2.0/assets/33418972/fe8ad5bc-4ada-4767-9461-9c42b888d8ef)
+
+![HabitatApp_2jpg](https://github.com/fitzdora/habitatAppV2.0/assets/33418972/2bad8cb9-5124-4a29-aad4-5f6f9ddb1981)
+
+#Resources
+
+README IMAGES IN GITHUB
+https://www.youtube.com/watch?v=nvPOUdz5PL4
+
